@@ -4,39 +4,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Safi Choudhury</title>
+  <title>SAFI CHOUDHURY</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <script type="module">
-    import { animate } from 'https://cdn.skypack.dev/popmotion';
-    document.addEventListener('DOMContentLoaded', () => {
-      const intro = document.getElementById('animated-intro');
-      animate({
-        from: 0,
-        to: 1,
-        duration: 1000,
-        onUpdate: latest => {
-          intro.style.opacity = latest;
-          intro.style.transform = `translateY(${(1 - latest) * 20}px)`;
-        }
-      });
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popmotion/popmotion@8.7.5/dist/popmotion.global.min.js"></script>
   <style>
     body {
       font-family: 'Rubik', sans-serif;
-      background-color: #FAE03C;
+      background-color: #FFD500;
       background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('animated-intro');
+      if (window.popmotion && popmotion.animate) {
+        popmotion.animate({
+          from: 0,
+          to: 1,
+          duration: 1000,
+          onUpdate: latest => {
+            intro.style.opacity = latest;
+            intro.style.transform = `translateY(${(1 - latest) * 20}px)`;
+          }
+        });
+      } else {
+        intro.style.opacity = 1;
+        intro.style.transform = 'translateY(0)';
+      }
+    });
+  </script>
 </head>
 
 <body class="text-gray-900">
   <div class="container mx-auto px-4 py-10">
     <header class="flex justify-between items-center mb-10">
       <div>
-        <h1 class="text-4xl font-bold text-yellow-700">Safi Choudhury</h1>
-        <p class="text-sm font-medium text-yellow-900">Expert Cloud & DevOps Engineer</p>
+        <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
+        <p class="text-2xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
       </div>
       <nav class="flex gap-6 text-yellow-900">
         <a href="index.html" class="font-medium hover:underline">Home</a>
