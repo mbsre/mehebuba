@@ -5,94 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Safi Choudhury</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-     }
- 
-     body {
-       display: flex;
-       flex-direction: column;
-       min-height: 100vh; /* Changed from height to min-height */
-       font-family: 'Rubik', sans-serif;
-       background-color: #FAE03C;
-       background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
-     }
- 
-     main {
-       flex: 1;
-       flex: 1 0 auto; /* This will push footer down */
-     }
-     
-     footer {
-       flex-shrink: 0; /* Prevent footer from shrinking */
-     }
-   </style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Rubik', sans-serif;
+      background-color: #FAE03C;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
+    }
+    
+    main {
+      flex: 1 0 auto;
+    }
+    
+    footer {
+      flex-shrink: 0;
+    }
+    
+    .contact-card {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.85);
+    }
+    
+    .form-input {
+      transition: all 0.3s ease;
+    }
+    
+    .form-input:focus {
+      box-shadow: 0 0 0 3px rgba(250, 224, 60, 0.3);
+    }
+  </style>
 </head>
 <body class="text-gray-900">
-  <main> <!-- Added main tag to wrap content -->
-  <div class="container mx-auto px-4 py-10">
-    <!-- Header -->
-    <header class="flex justify-between items-center mb-10">
-      <div>
-        <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
-        <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+  <main>
+    <div class="container mx-auto px-4 py-10">
+      <!-- Header -->
+      <header class="flex flex-col md:flex-row justify-between items-center mb-10">
+        <div class="mb-4 md:mb-0 text-center md:text-left">
+          <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
+          <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-yellow-900">
+          <a href="index.html" class="font-medium hover:underline">Home</a>
+          <a href="offers.html" class="hover:underline">Offers</a>
+          <a href="portfolio.html" class="hover:underline">Portfolio</a>
+          <a href="hire-me.html" class="hover:underline">Hire Me</a>
+          <a href="cv.html" class="hover:underline">CV</a>
+          <a href="presentations.html" class="hover:underline">Presentations</a>
+          <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
+          <a href="contact.html" class="hover:underline font-semibold underline">Get in Touch</a>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <!-- Contact Form -->
+        <div class="contact-card rounded-2xl shadow-xl p-8 w-full lg:w-1/2">
+          <h2 class="text-3xl font-bold text-yellow-700 mb-6">Let's Connect</h2>
+          <p class="text-gray-700 mb-8">Have a project in mind or want to discuss opportunities? Send me a message and I'll get back to you within 24 hours.</p>
+          
+          <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6">
+            <div>
+              <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+              <input type="text" id="name" name="name" required 
+                     class="form-input w-full px-4 py-3 border-2 rounded-lg border-yellow-300 focus:border-yellow-500">
+            </div>
+            
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+              <input type="email" id="email" name="email" required 
+                     class="form-input w-full px-4 py-3 border-2 rounded-lg border-yellow-300 focus:border-yellow-500">
+            </div>
+            
+            <div>
+              <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+              <textarea id="message" name="message" rows="5" required 
+                        class="form-input w-full px-4 py-3 border-2 rounded-lg border-yellow-300 focus:border-yellow-500"></textarea>
+            </div>
+            
+            <button type="submit" 
+                    class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+              Send Message <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="contact-card rounded-2xl shadow-xl p-8 w-full lg:w-1/2">
+          <h2 class="text-3xl font-bold text-yellow-700 mb-6">Contact Information</h2>
+          <p class="text-gray-700 mb-8">Prefer direct communication? Here's how you can reach me:</p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                <i class="fas fa-envelope text-yellow-700 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Email</h3>
+                <a href="mailto:safi@example.com" class="text-yellow-800 hover:underline">safi@example.com</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                <i class="fab fa-linkedin-in text-yellow-700 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">LinkedIn</h3>
+                <a href="https://linkedin.com/in/safi" target="_blank" class="text-yellow-800 hover:underline">linkedin.com/in/safi</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                <i class="fab fa-github text-yellow-700 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">GitHub</h3>
+                <a href="https://github.com/safi" target="_blank" class="text-yellow-800 hover:underline">github.com/safi</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                <i class="fas fa-globe text-yellow-700 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Blog</h3>
+                <a href="https://xops.cloudsols.com" target="_blank" class="text-yellow-800 hover:underline">xops.cloudsols.com</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-10 pt-6 border-t border-yellow-200">
+            <h3 class="font-semibold text-gray-800 mb-4">Availability</h3>
+            <p class="text-gray-700">Typically respond within 24 hours on weekdays</p>
+          </div>
+        </div>
       </div>
-      <nav class="flex gap-6 text-yellow-900">
-        <a href="index.html" class="font-medium hover:underline">Home</a>
-        <a href="offers.html" class="hover:underline">Offers</a>
-        <a href="portfolio.html" class="hover:underline">Portfolio</a>
-        <a href="hire-me.html" class="hover:underline">Hire Me</a>
-        <a href="cv.html" class="hover:underline">CV</a>
-        <a href="presentations.html" class="hover:underline">Presentations</a>
-        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
-        <a href="contact.html" class="hover:underline font-semibold underline">Get in Touch</a>
-      </nav>
-    </header>
-
-    <!-- Title -->
-    <h2 class="text-center text-3xl font-bold text-yellow-800 mb-10">GET IN TOUCH</h2>
-
-    <!-- Contact Form -->
-    <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-      <form action="mailto:your.email@example.com" method="POST" enctype="text/plain">
-        <div class="mb-4">
-          <label class="block text-gray-700 font-medium mb-2">Name</label>
-          <input type="text" name="name" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-medium mb-2">Email</label>
-          <input type="email" name="email" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 font-medium mb-2">Message</label>
-          <textarea name="message" rows="5" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
-        </div>
-        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">Send Message</button>
-      </form>
     </div>
-
-    <!-- Contact Info -->
-    <div class="mt-10 text-center text-gray-800">
-      <p class="mb-2">Email: <a href="mailto:your.email@example.com" class="text-yellow-900 underline">your.email@example.com</a></p>
-      <p class="mb-2">LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-yellow-900 underline">linkedin.com/in/your-profile</a></p>
-      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-yellow-900 underline">github.com/yourusername</a></p>
-    </div>
-  </div>
   </main>
+  
   <!-- Footer -->
-<footer class="bg-yellow-100 text-gray-800 py-6 mt-12 border-t border-yellow-300">
-  <div class="container mx-auto text-center space-y-2 text-sm">
-    <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
-    <div class="space-x-4">
-      <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
-      <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
-      <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
-      <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+  <footer class="bg-yellow-100 text-gray-800 py-6 border-t border-yellow-300">
+    <div class="container mx-auto text-center space-y-2 text-sm">
+      <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
+      <div class="space-x-4">
+        <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
+        <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
+        <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
+        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
