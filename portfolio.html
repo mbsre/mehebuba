@@ -1,152 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Safi Choudhury</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-     }
- 
-     body {
-       display: flex;
-       flex-direction: column;
-       min-height: 100vh; /* Changed from height to min-height */
-       font-family: 'Rubik', sans-serif;
-       background-color: #FAE03C;
-       background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
-     }
- 
-     main {
-       flex: 1;
-       flex: 1 0 auto; /* This will push footer down */
-     }
-     
-     footer {
-       flex-shrink: 0; /* Prevent footer from shrinking */
-     }
-   </style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Rubik', sans-serif;
+      background-color: #FAE03C;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
+    }
+    
+    main {
+      flex: 1 0 auto;
+    }
+    
+    footer {
+      flex-shrink: 0;
+    }
+    
+    .project-card {
+      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .project-image {
+      height: 200px;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body class="text-gray-900">
-  <div class="container mx-auto px-4 py-10">
-    <header class="flex justify-between items-center mb-10">
-      <div>
-        <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
-        <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+  <main>
+    <div class="container mx-auto px-4 py-10">
+      <!-- Header -->
+      <header class="flex flex-col md:flex-row justify-between items-center mb-10">
+        <div class="mb-4 md:mb-0 text-center md:text-left">
+          <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
+          <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-4 md:gap-6 text-yellow-900">
+          <a href="index.html" class="font-medium hover:underline">Home</a>
+          <a href="offers.html" class="hover:underline">Offers</a>
+          <a href="portfolio.html" class="hover:underline font-semibold underline">Portfolio</a>
+          <a href="hire-me.html" class="hover:underline">Hire Me</a>
+          <a href="cv.html" class="hover:underline">CV</a>
+          <a href="presentations.html" class="hover:underline">Presentations</a>
+          <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
+          <a href="contact.html" class="hover:underline">Get in Touch</a>
+        </nav>
+      </header>
+
+      <!-- Portfolio Title -->
+      <h2 class="text-center text-3xl font-bold text-yellow-800 mb-10">MY PROJECTS</h2>
+
+      <!-- Projects Grid -->
+      <div class="project-grid grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/cloud-migration.jpg" alt="Cloud Migration" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">Cloud Migration</h3>
+            <p class="text-gray-700 mb-4">Led a successful cloud migration for a fintech company, moving legacy systems to AWS with zero downtime and full CI/CD integration.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">AWS</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Terraform</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/devops-pipeline.jpg" alt="DevOps Pipeline" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">CI/CD Pipeline</h3>
+            <p class="text-gray-700 mb-4">Implemented a complete GitOps workflow with ArgoCD and GitHub Actions, reducing deployment times by 80% and improving reliability.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">GitHub Actions</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">ArgoCD</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Docker</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/k8s-cluster.jpg" alt="Kubernetes Cluster" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">K8s Cluster Optimization</h3>
+            <p class="text-gray-700 mb-4">Redesigned and optimized Kubernetes infrastructure for a SaaS platform, achieving 40% cost reduction while improving performance.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">EKS</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Helm</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/security-hardening.jpg" alt="Security Hardening" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">Security Hardening</h3>
+            <p class="text-gray-700 mb-4">Implemented comprehensive security controls across cloud infrastructure, achieving SOC 2 compliance for a healthcare startup.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">AWS Security</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">IAM</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">CIS Benchmarks</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/monitoring-system.jpg" alt="Monitoring System" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">Monitoring System</h3>
+            <p class="text-gray-700 mb-4">Built an observability platform using Prometheus, Grafana and ELK stack that reduced incident response time by 65%.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Prometheus</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Grafana</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">ELK</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
+
+        <!-- Project 6 (New) -->
+        <div class="project-card rounded-2xl shadow-lg overflow-hidden">
+          <img src="images/serverless-architecture.jpg" alt="Serverless Architecture" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-yellow-700 mb-2">Serverless Architecture</h3>
+            <p class="text-gray-700 mb-4">Designed and implemented a cost-effective serverless architecture for a mobile backend, reducing infrastructure costs by 75%.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">AWS Lambda</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">API Gateway</span>
+              <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">DynamoDB</span>
+            </div>
+            <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition duration-300">Learn More</a>
+          </div>
+        </div>
       </div>
-      <nav class="flex gap-6 text-yellow-900">
-        <a href="index.html" class="font-medium hover:underline">Home</a>
-        <a href="offers.html" class="hover:underline">Offers</a>
-        <a href="portfolio.html" class="hover:underline">Portfolio</a>
-        <a href="hire-me.html" class="hover:underline">Hire Me</a>
-        <a href="cv.html" class="hover:underline">CV</a>
-        <a href="presentations.html" class="hover:underline">Presentations</a>
-        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
-        <a href="contact.html" class="hover:underline">Get in Touch</a>
-      </nav>
-    </header>
-
-    <h2 class="text-3xl text-center font-bold text-yellow-800 mb-12">PORTFOLIO</h2>
-
-    <!-- Project 1 -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-10">
-  <h3 class="text-2xl font-semibold text-yellow-700 mb-4">Cloud Migration Project</h3>
-  <div class="overflow-hidden rounded-lg mb-4">
-    <img 
-      src="images/project1.jpg" 
-      alt="Cloud Migration" 
-      class="w-full h-auto max-w-full object-cover"
-      style="max-height: 400px; min-height: 200px;"
-      loading="lazy"
-    >
-  </div>
-  <p class="text-gray-800 mb-4">Led a successful cloud migration for a fintech company, moving legacy systems to AWS with zero downtime and full CI/CD integration.</p>
-  <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">Let's Work Together</a>
-</section>
-
-    <!-- Project 2 -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-10">
-      <h3 class="text-2xl font-semibold text-yellow-700 mb-4">Kubernetes Deployment</h3>
-      <div class="overflow-hidden rounded-lg mb-4">
-        <img 
-          src="images/project2.jpg" 
-        alt="Cloud Migration" 
-        class="w-full h-auto max-w-full object-cover"
-        style="max-height: 400px; min-height: 200px;"
-        loading="lazy"
-        >
-      </div>
-      <p class="text-gray-800 mb-4">Architected and deployed a microservices platform on Kubernetes with Prometheus and Grafana observability stack.</p>
-      <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">Get in Touch</a>
-    </section>
-
-    <!-- Project 3 -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-10">
-      <h3 class="text-2xl font-semibold text-yellow-700 mb-4">CI/CD Automation</h3>
-      <div class="overflow-hidden rounded-lg mb-4">
-        <img 
-          src="images/project3.jpg" 
-        alt="Cloud Migration" 
-        class="w-full h-auto max-w-full object-cover"
-        style="max-height: 400px; min-height: 200px;"
-        loading="lazy"
-        >
-      </div>
-      <p class="text-gray-800 mb-4">Designed a fully automated CI/CD pipeline using GitHub Actions, Terraform, and Ansible for a large e-commerce client.</p>
-      <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">Contact Me</a>
-    </section>
-
-    <!-- Project 4 -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-10">
-      <h3 class="text-2xl font-semibold text-yellow-700 mb-4">Multi-cloud Disaster Recovery Setup</h3>
-      <div class="overflow-hidden rounded-lg mb-4">
-        <img 
-          src="images/project4.jpg" 
-        alt="Cloud Migration" 
-        class="w-full h-auto max-w-full object-cover"
-        style="max-height: 400px; min-height: 200px;"
-        loading="lazy"
-        >
-      </div>
-      <p class="text-gray-800 mb-4">Build a robust system that automatically fails over between AWS and Azure. This project demonstrates your ability to design highly available systems across multiple cloud providers..</p>
-      <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-30">Work With Me</a>
-    </section>
-
-    <!-- Project 5 -->
-    <section class="bg-white rounded-xl shadow-md p-8 mb-10">
-      <h3 class="text-2xl font-semibold text-yellow-700 mb-4">Infrastructure as Code with Terraform</h3>
-      <div class="overflow-hidden rounded-lg mb-4">
-        <img 
-          src="images/project5.jpg" 
-        alt="Cloud Migration" 
-        class="w-full h-auto max-w-full object-cover"
-        style="max-height: 400px; min-height: 200px;"
-        loading="lazy"
-        >
-      </div>
-      <p class="text-gray-800 mb-4">Build a comprehensive infrastructure setup on AWS or Azure using Terraform. This project demonstrates your ability to manage complex cloud environments efficiently..</p>
-      <a href="hire-me.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-30">Let's Connect</a>
-    </section>
-
-  </div>
-  <!-- Footer -->
-<footer class="bg-yellow-100 text-gray-800 py-6 mt-12 border-t border-yellow-300">
-  <div class="container mx-auto text-center space-y-2 text-sm">
-    <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
-    <div class="space-x-4">
-      <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
-      <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
-      <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
-      <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
     </div>
-  </div>
-</footer>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-yellow-100 text-gray-800 py-6 border-t border-yellow-300">
+    <div class="container mx-auto text-center space-y-2 text-sm">
+      <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
+      <div class="space-x-4">
+        <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
+        <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
+        <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
+        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+      </div>
+    </div>
+  </footer>
 </body>
-
 </html>
