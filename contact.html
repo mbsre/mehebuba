@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Safi Choudhury</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: #FAE03C;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
+    }
+  </style>
+</head>
+<body class="text-gray-900">
+  <div class="container mx-auto px-4 py-10">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-10">
+      <div>
+        <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
+        <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+      </div>
+      <nav class="flex gap-6 text-yellow-900">
+        <a href="index.html" class="font-medium hover:underline">Home</a>
+        <a href="offers.html" class="hover:underline">Offers</a>
+        <a href="portfolio.html" class="hover:underline">Portfolio</a>
+        <a href="hire-me.html" class="hover:underline">Hire Me</a>
+        <a href="cv.html" class="hover:underline">CV</a>
+        <a href="presentations.html" class="hover:underline">Presentations</a>
+        <a href="blog.html" class="hover:underline">Blog</a>
+        <a href="contact.html" class="hover:underline font-semibold underline">Get in Touch</a>
+      </nav>
+    </header>
+
+    <!-- Title -->
+    <h2 class="text-center text-3xl font-bold text-yellow-800 mb-10">GET IN TOUCH</h2>
+
+    <!-- Contact Form -->
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+      <form action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2">Name</label>
+          <input type="text" name="name" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2">Email</label>
+          <input type="email" name="email" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-medium mb-2">Message</label>
+          <textarea name="message" rows="5" required class="w-full px-4 py-2 border rounded-md border-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"></textarea>
+        </div>
+        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-10 text-center text-gray-800">
+      <p class="mb-2">Email: <a href="mailto:your.email@example.com" class="text-yellow-900 underline">your.email@example.com</a></p>
+      <p class="mb-2">LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank" class="text-yellow-900 underline">linkedin.com/in/your-profile</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank" class="text-yellow-900 underline">github.com/yourusername</a></p>
+    </div>
+  </div>
+</body>
+</html>
