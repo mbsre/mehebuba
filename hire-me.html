@@ -16,62 +16,70 @@
     body {
       display: flex;
       flex-direction: column;
+      min-height: 100vh; /* Changed from height to min-height */
       font-family: 'Rubik', sans-serif;
       background-color: #FAE03C;
       background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
     }
 
     main {
-      flex: 1;
+      flex: 1 0 auto; /* This will push footer down */
+    }
+    
+    footer {
+      flex-shrink: 0; /* Prevent footer from shrinking */
     }
   </style>
 </head>
 
 <body class="text-gray-900">
-  <div class="container mx-auto px-4 py-10">
-    <header class="flex justify-between items-center mb-10">
-      <div>
-        <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
-        <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
-      </div>
-      <nav class="flex gap-6 text-yellow-900">
-        <a href="index.html" class="font-medium hover:underline">Home</a>
-        <a href="offers.html" class="hover:underline">Offers</a>
-        <a href="portfolio.html" class="hover:underline">Portfolio</a>
-        <a href="hire-me.html" class="hover:underline font-bold">Hire Me</a>
-        <a href="cv.html" class="hover:underline">CV</a>
-        <a href="presentations.html" class="hover:underline">Presentations</a>
-        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
-        <a href="contact.html" class="hover:underline">Get in Touch</a>
-      </nav>
-    </header>
+  <main> <!-- Added main tag to wrap content -->
+    <div class="container mx-auto px-4 py-10">
+      <header class="flex justify-between items-center mb-10">
+        <div>
+          <h1 class="text-4xl font-bold text-yellow-700">SAFI CHOUDHURY</h1>
+          <p class="text-xl font-medium text-yellow-800">Expert Cloud & DevOps Engineer</p>
+        </div>
+        <nav class="flex gap-6 text-yellow-900">
+          <a href="index.html" class="font-medium hover:underline">Home</a>
+          <a href="offers.html" class="hover:underline">Offers</a>
+          <a href="portfolio.html" class="hover:underline">Portfolio</a>
+          <a href="hire-me.html" class="hover:underline font-bold">Hire Me</a>
+          <a href="cv.html" class="hover:underline">CV</a>
+          <a href="presentations.html" class="hover:underline">Presentations</a>
+          <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline">Blog</a>
+          <a href="contact.html" class="hover:underline">Get in Touch</a>
+        </nav>
+      </header>
 
-    <section class="bg-white rounded-xl shadow-lg p-10">
-      <h2 class="text-3xl font-semibold text-yellow-700 mb-4">Let’s Work Together</h2>
-      <p class="mb-6 text-lg">I'm currently available for freelance and contract DevOps roles. I specialize in automating infrastructure, implementing CI/CD pipelines, and architecting scalable cloud environments.</p>
-      <p class="mb-6">If you're looking for an experienced engineer to bring speed, efficiency, and reliability to your cloud operations, let's talk!</p>
-      <a href="mailto:safi@example.com" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">Hire Me</a>
+      <section class="bg-white rounded-xl shadow-lg p-10 mb-10">
+        <h2 class="text-3xl font-semibold text-yellow-700 mb-4">Let's Work Together</h2>
+        <p class="mb-6 text-lg">I'm currently available for freelance and contract DevOps roles. I specialize in automating infrastructure, implementing CI/CD pipelines, and architecting scalable cloud environments.</p>
+        <p class="mb-6">If you're looking for an experienced engineer to bring speed, efficiency, and reliability to your cloud operations, let's talk!</p>
+        <a href="mailto:safi@example.com" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">Hire Me</a>
 
-      <div class="mt-10 text-sm text-yellow-900">
-        <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="underline">safi@example.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/safi" class="underline" target="_blank">linkedin.com/in/safi</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/safi" class="underline" target="_blank">github.com/safi</a></p>
-        <p><strong>Blog:</strong> <a href="https://safi.dev/blog" class="underline" target="_blank">safi.dev/blog</a></p>
-      </div>
-    </section>
-  </div>
-  <!-- Footer -->
-<footer class="bg-yellow-100 text-gray-800 py-6 mt-12 border-t border-yellow-300">
-  <div class="container mx-auto text-center space-y-2 text-sm">
-    <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
-    <div class="space-x-4">
-      <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
-      <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
-      <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
-      <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+        <div class="mt-10 text-sm text-yellow-900">
+          <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="underline">safi@example.com</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/safi" class="underline" target="_blank">linkedin.com/in/safi</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/safi" class="underline" target="_blank">github.com/safi</a></p>
+          <p><strong>Blog:</strong> <a href="https://safi.dev/blog" class="underline" target="_blank">safi.dev/blog</a></p>
+        </div>
+      </section>
     </div>
-  </div>
-</footer>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-yellow-100 text-gray-800 py-6 border-t border-yellow-300">
+    <div class="container mx-auto text-center space-y-2 text-sm">
+      <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
+      <div class="space-x-4">
+        <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
+        <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
+        <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
+        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
