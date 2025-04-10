@@ -7,29 +7,35 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-     }
- 
-     body {
-       display: flex;
-       flex-direction: column;
-       min-height: 100vh; /* Changed from height to min-height */
-       font-family: 'Rubik', sans-serif;
-       background-color: #FAE03C;
-       background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
-     }
- 
-     main {
-       flex: 1;
-       flex: 1 0 auto; /* This will push footer down */
-     }
-     
-     footer {
-       flex-shrink: 0; /* Prevent footer from shrinking */
-     }
-   </style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: 'Rubik', sans-serif;
+      background-color: #FAE03C;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/symphony.png');
+    }
+    
+    main {
+      flex: 1 0 auto;
+    }
+    
+    footer {
+      flex-shrink: 0;
+    }
+    
+    .pdf-container {
+      width: 100%;
+      height: 800px;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body class="text-gray-900">
   <div class="container mx-auto px-4 py-10">
@@ -51,34 +57,38 @@
       </nav>
     </header>
 
-    <!-- CV Title -->
-    <h2 class="text-center text-3xl font-bold text-yellow-800 mb-8">CV</h2>
-
-    <!-- PDF Embed -->
-    <div class="bg-white shadow-lg rounded-lg overflow-hidden p-4">
-      <iframe 
-        src="Safi_CV.pdf" 
-        width="100%" 
-        height="800px" 
-        class="border border-yellow-400 rounded"
-        title="Safi Choudhury CV">
-      </iframe>
+    <!-- CV Content -->
+    <div class="flex flex-col items-center">
+      <h2 class="text-3xl font-bold text-yellow-800 mb-8">Curriculum Vitae</h2>
+      
+      <!-- PDF Embed - Borderless -->
+      <div class="pdf-container">
+        <iframe 
+          src="Safi_CV.pdf" 
+          width="100%" 
+          height="100%" 
+          style="border: none;"
+          title="Safi Choudhury CV">
+        </iframe>
+      </div>
+      
       <p class="mt-4 text-center text-sm text-gray-700">
         If the CV doesn't load, <a href="Safi_CV.pdf" class="text-yellow-800 underline font-medium" target="_blank">click here to download it</a>.
       </p>
     </div>
   </div>
+  
   <!-- Footer -->
-<footer class="bg-yellow-100 text-gray-800 py-6 mt-12 border-t border-yellow-300">
-  <div class="container mx-auto text-center space-y-2 text-sm">
-    <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
-    <div class="space-x-4">
-      <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
-      <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
-      <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
-      <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+  <footer class="bg-yellow-100 text-gray-800 py-6 border-t border-yellow-300">
+    <div class="container mx-auto text-center space-y-2 text-sm">
+      <p><strong>Email:</strong> <a href="mailto:safi@example.com" class="text-yellow-700 underline">safi@example.com</a></p>
+      <div class="space-x-4">
+        <a href="offers.html" class="hover:underline text-yellow-800">Offers</a>
+        <a href="contact.html" class="hover:underline text-yellow-800">Contact Me</a>
+        <a href="hire-me.html" class="hover:underline text-yellow-800">Hire Me</a>
+        <a href="https://xops.cloudsols.com" target="_blank" class="hover:underline text-yellow-800">Blog</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 </body>
 </html>
